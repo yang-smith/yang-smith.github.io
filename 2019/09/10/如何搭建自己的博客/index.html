@@ -86,10 +86,13 @@
 <meta property="og:site_name" content="Blog autumn river&#x2F; 秋水">
 <meta property="og:description" content="第一篇博客就从怎么搭建的这个博客开始吧。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-11T12:36:08.848Z">
+<meta property="og:image" content="http://yoursite.com/images/image.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/09/10/如何搭建自己的博客/image.jpg">
+<meta property="og:updated_time" content="2020-01-07T02:52:47.572Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建一个自己的博客（hexo+github）">
 <meta name="twitter:description" content="第一篇博客就从怎么搭建的这个博客开始吧。">
+<meta name="twitter:image" content="http://yoursite.com/images/image.jpg">
 
 
 
@@ -304,7 +307,6 @@
 
       
         <h2 id="1-序"><a href="#1-序" class="headerlink" title="1.序"></a>1.序</h2><p>第一篇博客就从怎么搭建的这个博客开始吧。</p>
-<a id="more"></a>  
 <h2 id="2-环境配置与准备"><a href="#2-环境配置与准备" class="headerlink" title="2.环境配置与准备"></a>2.环境配置与准备</h2><p>所需要的：</p>
 <ul>
 <li>安装node.js（<a href="http://https://nodejs.org/en/" title="官网" target="_blank" rel="noopener">官网</a>下载安装即可）</li>
@@ -319,8 +321,14 @@
 <li>修改本地博客文件夹下_config.yml，找到最后的deploy部分。修改成：<pre><code>deploy:
     type: git
     repository: https://github.com/UserName/UserNamegithub.io.git
-    branch: master</code></pre>其中：<br>　　type值对应的是你所部署的的服务器类型，我们这里填写git就可以。<br>　　repo是你的仓库地址，也就是仓库克隆的地址<br>　　branch不写默认是master，通常我们写成master就可以。<br>特别注意，冒号后需要空一格，例如type： git<br>完成上面的配置后，分别运行：<br>　　hexo clean       清理缓存<br>　　hexo generate 进行渲染 简写 hexo g<br>　　hexo deploy    简写为 hexo d来部署到git服务器<br>执行完后就可以打开浏览器地址，输入http://你github名字.github.io 看到效果了</li>
+    branch: master</code></pre>其中：<br>　　type值对应的是你所部署的的服务器类型，我们这里填写git就可以。<br>　　repo是你的仓库地址，也就是仓库克隆的地址<br>　　branch不写默认是master，通常我们写成master就可以。<br>特别注意，冒号后需要空一格，例如type： git<br>完成上面的配置后，分别运行：<br>　　hexo clean       清理缓存<br>　　hexo generate 进行渲染 简写 hexo g<br>　　hexo deploy    简写为 hexo d来部署到git服务器<br>执行完后就可以打开浏览器地址，输入http://你github名字.github.io 看到效果了<h2 id="6-开始写文章"><a href="#6-开始写文章" class="headerlink" title="6.开始写文章"></a>6.开始写文章</h2></li>
+<li>原生方式新建文章<br>Hexo的项目结构是在网站根目录的source/_posts目录下存放你的博客文档，以.md文档格式存储，默认已存在一个hello-world.md文章<br>使用命令hexo new <title> 创建文章，支持Markdown语法，也支持一些增强功能标签代码段，用于插入视频图片等。图片可以统一放在source/images目录中，并以 <img src="/images/image.jpg" alt> 方式引用或者在 _config.yml 打开 post_asset_folder 功能，将当前文章所用的图片放置到source目录下的文章同名资源目录下，以 <img src="image.jpg" alt> 方式引用</title></li>
 </ul>
+<p>另外一些文章中提到建议使用第三方的专业图床来存放这些静态图片素材</p>
+<ul>
+<li>使用 Hexo Admin 插件<br>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）<br>npm install –save hexo-admin 安装<br>hexo server -d   使用<br>open <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a>   </li>
+</ul>
+<p>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
 
       
     </div>
@@ -344,10 +352,6 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/09/10/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
             
           </div>
 
@@ -447,7 +451,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -480,7 +484,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-序"><span class="nav-number">1.</span> <span class="nav-text">1.序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-环境配置与准备"><span class="nav-number">2.</span> <span class="nav-text">2.环境配置与准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-本地创建博客文件"><span class="nav-number">3.</span> <span class="nav-text">3.本地创建博客文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-github中创建用于存放博客的仓库"><span class="nav-number">4.</span> <span class="nav-text">4.github中创建用于存放博客的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-关联本地博客文件夹和GitHub"><span class="nav-number">5.</span> <span class="nav-text">5.关联本地博客文件夹和GitHub</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-序"><span class="nav-number">1.</span> <span class="nav-text">1.序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-环境配置与准备"><span class="nav-number">2.</span> <span class="nav-text">2.环境配置与准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-本地创建博客文件"><span class="nav-number">3.</span> <span class="nav-text">3.本地创建博客文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-github中创建用于存放博客的仓库"><span class="nav-number">4.</span> <span class="nav-text">4.github中创建用于存放博客的仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-关联本地博客文件夹和GitHub"><span class="nav-number">5.</span> <span class="nav-text">5.关联本地博客文件夹和GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-开始写文章"><span class="nav-number">6.</span> <span class="nav-text">6.开始写文章</span></a></li></ol></div>
             
 
           </div>
@@ -500,7 +504,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
