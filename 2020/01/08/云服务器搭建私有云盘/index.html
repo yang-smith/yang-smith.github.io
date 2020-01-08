@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="python,">
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="当利用python处理大规模数据或者运行一些耗时较长的程序时，往往会发现程序运行时CPU并没有跑满，哪怕开了多线程后CPU利用率仍然不高。这是因为在默认情况下，Python 程序是单个进程，使用单 CPU 核心执行，这意味着多核处理器只使用了一个核。「一核有难九核围观」意味着超过 50% 的算力都会被浪费。这篇文章将介绍如何解决这种情况。">
-<meta name="keywords" content="python">
+<meta name="description" content="租了个云服务器，想着把它利用起来。先用它搭建个私有云盘吧。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python 充分利用CPU">
-<meta property="og:url" content="http://yoursite.com/2020/01/07/python-充分利用CPU/index.html">
+<meta property="og:title" content="云服务器搭建私有云盘">
+<meta property="og:url" content="http://yoursite.com/2020/01/08/云服务器搭建私有云盘/index.html">
 <meta property="og:site_name" content="Blog autumn river&#x2F; 秋水">
-<meta property="og:description" content="当利用python处理大规模数据或者运行一些耗时较长的程序时，往往会发现程序运行时CPU并没有跑满，哪怕开了多线程后CPU利用率仍然不高。这是因为在默认情况下，Python 程序是单个进程，使用单 CPU 核心执行，这意味着多核处理器只使用了一个核。「一核有难九核围观」意味着超过 50% 的算力都会被浪费。这篇文章将介绍如何解决这种情况。">
+<meta property="og:description" content="租了个云服务器，想着把它利用起来。先用它搭建个私有云盘吧。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-08T09:03:08.172Z">
+<meta property="og:updated_time" content="2020-01-08T09:23:58.628Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python 充分利用CPU">
-<meta name="twitter:description" content="当利用python处理大规模数据或者运行一些耗时较长的程序时，往往会发现程序运行时CPU并没有跑满，哪怕开了多线程后CPU利用率仍然不高。这是因为在默认情况下，Python 程序是单个进程，使用单 CPU 核心执行，这意味着多核处理器只使用了一个核。「一核有难九核围观」意味着超过 50% 的算力都会被浪费。这篇文章将介绍如何解决这种情况。">
+<meta name="twitter:title" content="云服务器搭建私有云盘">
+<meta name="twitter:description" content="租了个云服务器，想着把它利用起来。先用它搭建个私有云盘吧。">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/01/07/python-充分利用CPU/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/08/云服务器搭建私有云盘/">
 
 
 
 
 
-  <title>python 充分利用CPU | Blog autumn river/ 秋水</title>
+  <title>云服务器搭建私有云盘 | Blog autumn river/ 秋水</title>
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/07/python-充分利用CPU/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/08/云服务器搭建私有云盘/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="yang-smith">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python 充分利用CPU</h1>
+          <h1 class="post-title" itemprop="name headline">云服务器搭建私有云盘</h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-07T11:06:00+08:00">
-                2020-01-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-08T17:04:00+08:00">
+                2020-01-08
               </time>
             
 
@@ -315,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/编程/" itemprop="url" rel="index">
-                    <span itemprop="name">编程</span>
+                  <a href="/categories/杂项/" itemprop="url" rel="index">
+                    <span itemprop="name">杂项</span>
                   </a>
                 </span>
 
@@ -352,13 +351,36 @@
       
 
       
-        <p>当利用python处理大规模数据或者运行一些耗时较长的程序时，往往会发现程序运行时CPU并没有跑满，哪怕开了多线程后CPU利用率仍然不高。这是因为在默认情况下，Python 程序是单个进程，使用单 CPU 核心执行，这意味着多核处理器只使用了一个核。「一核有难九核围观」意味着超过 50% 的算力都会被浪费。这篇文章将介绍如何解决这种情况。</p>
-<a id="more"></a>
-<h2 id="多线程无法增加cpu使用率的原因"><a href="#多线程无法增加cpu使用率的原因" class="headerlink" title="多线程无法增加cpu使用率的原因"></a>多线程无法增加cpu使用率的原因</h2><p>GIL 的全程为 Global Interpreter Lock ，意即全局解释器锁。在 Python 语言的主流实现 CPython 中，GIL 是一个货真价实的全局线程锁，在解释器解释执行任何 Python 代码时，都需要先获得这把锁才行，在遇到 I/O 操作时会释放这把锁。如果是纯计算的程序，没有 I/O 操作，解释器会每隔 100 次操作就释放这把锁，让别的线程有机会执行（这个次数可以通过 sys.setcheckinterval 来调整）。所以虽然 CPython 的线程库直接封装操作系统的原生线程，但 CPython 进程做为一个整体，同一时间只会有一个获得了 GIL 的线程在跑，其它的线程都处于等待状态等着 GIL 的释放。这就意味着哪怕开了多线程CPU使用率仍然不会很高。</p>
-<h2 id="如何充分使用多核跑程序"><a href="#如何充分使用多核跑程序" class="headerlink" title="如何充分使用多核跑程序"></a>如何充分使用多核跑程序</h2><p>有三个办法</p>
-<h3 id="multiprocessing"><a href="#multiprocessing" class="headerlink" title="multiprocessing"></a>multiprocessing</h3><p> multiprocessing 是多进程标准库，让多进程的 python 程序编写简化到类似多线程的程度，通过多进程的方式使用多个CPU核心。</p>
-<h3 id="C-语言扩展机制"><a href="#C-语言扩展机制" class="headerlink" title="C 语言扩展机制"></a>C 语言扩展机制</h3><p>如果不想用多进程这样重量级的解决方案，可以改用 C/C++。当然，你也不用做的这么绝，只需要把关键部分用 C/C++ 写成 Python 扩展，其它部分还是用 Python 来写，让 Python 的归 Python，C 的归 C。一般计算密集性的程序都会用 C 代码编写并通过扩展的方式集成到 Python 脚本里（如 NumPy 模块）。这样在扩展里就完全可以用 C 创建原生线程，就可以充分利用 CPU 的计算资源了。</p>
-<h3 id="ctypes"><a href="#ctypes" class="headerlink" title="ctypes"></a>ctypes</h3><p>不过，写 Python 扩展总是让人觉得很复杂。好在 Python 还有另一种与 C 模块进行互通的机制 : ctypes。ctypes 与 Python 扩展不同，它可以让 Python 直接调用任意的 C 动态库的导出函数。你所要做的只是用 ctypes 写些 python 代码即可。</p>
+        <p>租了个云服务器，想着把它利用起来。先用它搭建个私有云盘吧。<br> <a id="more"></a> </p>
+<h2 id="1-准备工作"><a href="#1-准备工作" class="headerlink" title="1.准备工作"></a>1.准备工作</h2><p>一个云服务器，如果是学生的话推荐阿里云学生服务器<a href="https://promotion.aliyun.com/ntms/act/campus2018.html" target="_blank" rel="noopener">阿里云学生服务器</a>，9.5元一个月。<br>有两种，<a href="https://yq.aliyun.com/articles/700446" target="_blank" rel="noopener">区别参见</a>。<br>我是使用预装的centos系统。</p>
+<h2 id="2-搭建环境"><a href="#2-搭建环境" class="headerlink" title="2.搭建环境"></a>2.搭建环境</h2><p>在云服务器中搭建LAMP环境<a href="https://www.jianshu.com/p/fabe5842c0e1" target="_blank" rel="noopener">（Linux）</a>或者WNMP环境（windows）<br>预装包 </p>
+<p><code>sudo yum install php-mysql php-json php-xml php-mbstring php-zip php-gd curl php-curl php-pdo</code></p>
+<p>之后的操作都要在root权限下运行</p>
+<h2 id="3-安装软件"><a href="#3-安装软件" class="headerlink" title="3.安装软件"></a>3.安装软件</h2><ul>
+<li>获取压缩包。<pre><code>wget https://download.owncloud.org/community/owncloud-10.0.4.tar.bz2</code></pre></li>
+</ul>
+<ul>
+<li>解压<pre><code>tar -xvf owncloud-10.0.4.tar.bz2</code></pre></li>
+<li>将之移动到 /var/www/html<pre><code>mv owncloud/* /var/www/html </code></pre></li>
+</ul>
+<h2 id="4-修改配置Apache文件"><a href="#4-修改配置Apache文件" class="headerlink" title="4.修改配置Apache文件"></a>4.修改配置Apache文件</h2><ul>
+<li><p>进入conf文件内        </p>
+<pre><code>vim /etc/httpd/conf/httpd.conf</code></pre><p>修改AllowOverride none 为 AllowOverride All</p>
+</li>
+<li><p>更改权限</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo chown -R apache:apache /var/www/html/</span><br><span class="line">$ sudo chmod 777 /var/www/html/config/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启 Apache 服务器</p>
+<pre><code>systemctl restart httpd</code></pre></li>
+</ul>
+<h2 id="5-在-MariaDB-上创建一个数据库，保存来自-OwnCloud-的数据"><a href="#5-在-MariaDB-上创建一个数据库，保存来自-OwnCloud-的数据" class="headerlink" title="5.在 MariaDB 上创建一个数据库，保存来自 OwnCloud 的数据"></a>5.在 MariaDB 上创建一个数据库，保存来自 OwnCloud 的数据</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mysql -u root -p</span><br><span class="line">MariaDB [(none)] &gt; create database owncloud;</span><br><span class="line">MariaDB [(none)] &gt; GRANT ALL ON owncloud.* TO ocuser@localhost IDENTIFIED BY &apos;owncloud&apos;;</span><br><span class="line">MariaDB [(none)] &gt; flush privileges;</span><br><span class="line">MariaDB [(none)] &gt; exit</span><br></pre></td></tr></table></figure>
+
+<h2 id="6-检验"><a href="#6-检验" class="headerlink" title="6.检验"></a>6.检验</h2><ul>
+<li>服务器配置部分完成后，现在我们可以在网页浏览器上访问 OwnCloud。打开浏览器，输入您的服务器 IP 地址<br>按照步骤认证即可</li>
+</ul>
+<ul>
+<li>可能的问题：php版本过低请参照<a href="https://towait.com/blog/how-to-upgrade-php-version-54-to-56-on-cento7/" target="_blank" rel="noopener">https://towait.com/blog/how-to-upgrade-php-version-54-to-56-on-cento7/</a></li>
+</ul>
 
       
     </div>
@@ -374,12 +396,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/python/" rel="tag"># python</a>
-          
-        </div>
-      
 
       
       
@@ -389,8 +405,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/11/小白机器学习教程路线/" rel="next" title="小白机器学习教程路线">
-                <i class="fa fa-chevron-left"></i> 小白机器学习教程路线
+              <a href="/2020/01/08/win10系统设置任务计划（以自动关机为例）/" rel="next" title="win10系统设置任务计划（以自动关机为例）">
+                <i class="fa fa-chevron-left"></i> win10系统设置任务计划（以自动关机为例）
               </a>
             
           </div>
@@ -398,10 +414,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/08/win10系统设置任务计划（以自动关机为例）/" rel="prev" title="win10系统设置任务计划（以自动关机为例）">
-                win10系统设置任务计划（以自动关机为例） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -551,7 +563,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程无法增加cpu使用率的原因"><span class="nav-number">1.</span> <span class="nav-text">多线程无法增加cpu使用率的原因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何充分使用多核跑程序"><span class="nav-number">2.</span> <span class="nav-text">如何充分使用多核跑程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#multiprocessing"><span class="nav-number">2.1.</span> <span class="nav-text">multiprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-语言扩展机制"><span class="nav-number">2.2.</span> <span class="nav-text">C 语言扩展机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ctypes"><span class="nav-number">2.3.</span> <span class="nav-text">ctypes</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-准备工作"><span class="nav-number">1.</span> <span class="nav-text">1.准备工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-搭建环境"><span class="nav-number">2.</span> <span class="nav-text">2.搭建环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-安装软件"><span class="nav-number">3.</span> <span class="nav-text">3.安装软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-修改配置Apache文件"><span class="nav-number">4.</span> <span class="nav-text">4.修改配置Apache文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-在-MariaDB-上创建一个数据库，保存来自-OwnCloud-的数据"><span class="nav-number">5.</span> <span class="nav-text">5.在 MariaDB 上创建一个数据库，保存来自 OwnCloud 的数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-检验"><span class="nav-number">6.</span> <span class="nav-text">6.检验</span></a></li></ol></div>
             
 
           </div>
