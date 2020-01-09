@@ -87,13 +87,10 @@
 <meta property="og:site_name" content="Blog autumn river&#x2F; 秋水">
 <meta property="og:description" content="第一篇博客就从怎么搭建的这个博客开始吧。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/image.jpg">
-<meta property="og:image" content="http://yoursite.com/2019/09/10/如何搭建自己的博客/image.jpg">
-<meta property="og:updated_time" content="2020-01-09T08:49:27.277Z">
+<meta property="og:updated_time" content="2020-01-09T09:12:15.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建一个自己的博客（hexo+github）">
 <meta name="twitter:description" content="第一篇博客就从怎么搭建的这个博客开始吧。">
-<meta name="twitter:image" content="http://yoursite.com/images/image.jpg">
 
 
 
@@ -402,18 +399,25 @@
 <li>新建一个存储博客文件的文件夹，例如MyBlog。</li>
 <li>进入到这个文件夹内，运行git。在git bash内输入并运行 hexo init（生成博客模板）。生成完后，运行 npm install。</li>
 <li>之后你的文件夹内就会生成标准的博客文件模板，文件结构如下：<br>├── _config.yml<br>├── package.json<br>├── scaffolds<br>├── source<br>|   ├── _drafts<br>|   └── _posts<br>└── themes<br>其中：_config.yml： 其中我们以后的大部分操作都会在_config.yml中进行，这个文件是我们的站点的配置文件<br>　　　　scaffolds： 模板文件，规定了我们创建一篇文章的时候最开始的样子，<br>　　　　source： 可以暂时的理解成我们文章的存放处<br>　　　　themes： 主题文件存放处。</li>
-<li>之后运行 hexo server 部署到本地，就可以访问本地<a href="http://localhost:4000/" title="localhost：4000" target="_blank" rel="noopener">localhost：4000</a>看见自己的博客<h2 id="4-github中创建用于存放博客的仓库"><a href="#4-github中创建用于存放博客的仓库" class="headerlink" title="4.github中创建用于存放博客的仓库"></a>4.github中创建用于存放博客的仓库</h2>　　进入github新建repo，这里要注意repository的名字一定要满足UserName.github.io(这里的UserName是你GitHub账号的名字)。这样最后才能将这个仓库当作个人主页展示。<h2 id="5-关联本地博客文件夹和GitHub"><a href="#5-关联本地博客文件夹和GitHub" class="headerlink" title="5.关联本地博客文件夹和GitHub"></a>5.关联本地博客文件夹和GitHub</h2></li>
+<li>之后运行 hexo server 部署到本地，就可以访问本地<a href="http://localhost:4000/" title="localhost：4000" target="_blank" rel="noopener">localhost：4000</a>看见自己的博客</li>
+</ul>
+<h2 id="4-github中创建用于存放博客的仓库"><a href="#4-github中创建用于存放博客的仓库" class="headerlink" title="4.github中创建用于存放博客的仓库"></a>4.github中创建用于存放博客的仓库</h2><p>　　进入github新建repo，这里要注意repository的名字一定要满足UserName.github.io(这里的UserName是你GitHub账号的名字)。这样最后才能将这个仓库当作个人主页展示。</p>
+<h2 id="5-关联本地博客文件夹和GitHub"><a href="#5-关联本地博客文件夹和GitHub" class="headerlink" title="5.关联本地博客文件夹和GitHub"></a>5.关联本地博客文件夹和GitHub</h2><ul>
 <li>修改本地博客文件夹下_config.yml，找到最后的deploy部分。修改成：<pre><code>deploy:
     type: git
     repository: https://github.com/UserName/UserNamegithub.io.git
-    branch: master</code></pre>其中：<br>　　type值对应的是你所部署的的服务器类型，我们这里填写git就可以。<br>　　repo是你的仓库地址，也就是仓库克隆的地址<br>　　branch不写默认是master，通常我们写成master就可以。<br>特别注意，冒号后需要空一格，例如type： git<br>完成上面的配置后，分别运行：<br>　　hexo clean       清理缓存<br>　　hexo generate 进行渲染 简写 hexo g<br>　　hexo deploy    简写为 hexo d来部署到git服务器<br>执行完后就可以打开浏览器地址，输入http://你github名字.github.io 看到效果了<h2 id="6-开始写文章"><a href="#6-开始写文章" class="headerlink" title="6.开始写文章"></a>6.开始写文章</h2></li>
-<li>原生方式新建文章<br>Hexo的项目结构是在网站根目录的source/_posts目录下存放你的博客文档，以.md文档格式存储，默认已存在一个hello-world.md文章<br>使用命令hexo new <title> 创建文章，支持Markdown语法，也支持一些增强功能标签代码段，用于插入视频图片等。图片可以统一放在source/images目录中，并以 <img src="/images/image.jpg" alt> 方式引用或者在 _config.yml 打开 post_asset_folder 功能，将当前文章所用的图片放置到source目录下的文章同名资源目录下，以 <img src="/2019/09/10/如何搭建自己的博客/image.jpg" alt> 方式引用</title></li>
+    branch: master</code></pre>其中：<br>　　type值对应的是你所部署的的服务器类型，我们这里填写git就可以。<br>　　repo是你的仓库地址，也就是仓库克隆的地址<br>　　branch不写默认是master，通常我们写成master就可以。<br>特别注意，冒号后需要空一格，例如type： git<br>完成上面的配置后，分别运行：<br>　　hexo clean       清理缓存<br>　　hexo generate 进行渲染 简写 hexo g<br>　　hexo deploy    简写为 hexo d来部署到git服务器<br>执行完后就可以打开浏览器地址，输入http://你github名字.github.io 看到效果了</li>
+</ul>
+<h2 id="6-开始写文章"><a href="#6-开始写文章" class="headerlink" title="6.开始写文章"></a>6.开始写文章</h2><ul>
+<li>原生方式新建文章<br>Hexo的项目结构是在网站根目录的<code>source/_posts</code> 目录下存放你的博客文档，以.md文档格式存储，默认已存在一个hello-world.md文章<br>使用命令<code>hexo new &lt;title&gt;</code>创建文章，支持Markdown语法，也支持一些增强功能标签代码段，用于插入视频图片等。图片可以统一放在<code>source/images</code>目录中，并以<code>![](/images/image.jpg)</code>方式引用或者在<code>_config.yml</code> 打开 post_asset_folder 功能，将当前文章所用的图片放置到source目录下的文章同名资源目录下，以 <code>![](image.jpg)</code> 方式引用</li>
 </ul>
 <p>另外一些文章中提到建议使用第三方的专业图床来存放这些静态图片素材</p>
 <ul>
-<li>使用 Hexo Admin 插件<br>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）<br>npm install –save hexo-admin 安装<br>hexo server -d   使用<br>open <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a>   </li>
+<li>使用 Hexo Admin 插件<br>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）<br><code>npm install --save hexo-admin</code> 安装<br><code>hexo server -d</code>  使用<br><code>open http://localhost:4000/admin</code>  </li>
 </ul>
-<h2 id="7-进阶"><a href="#7-进阶" class="headerlink" title="7.进阶"></a>7.进阶</h2><p>还想要进一步个性化或者增加其他小功能的朋友，推荐参考：<br><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a><br><a href="https://io-oi.me/tech/hexo-next-optimization/" target="_blank" rel="noopener">打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a></p>
+<h2 id="7-进阶"><a href="#7-进阶" class="headerlink" title="7.进阶"></a>7.进阶</h2><p>还想要进一步个性化或者增加其他小功能的朋友，推荐参考：</p>
+<p><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a></p>
+<p><a href="https://io-oi.me/tech/hexo-next-optimization/" target="_blank" rel="noopener">打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a></p>
 <p>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
 
       
