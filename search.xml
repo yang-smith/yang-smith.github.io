@@ -121,6 +121,7 @@
 <ul>
 <li>使用 Hexo Admin 插件<br>Hexo Admin 是一个本地在线式文章管理器，可以用直观可视化的方式新建、编辑博客文章、page页面，添加标签、分类等，并且支持剪贴板粘贴图片（自动在source_images_目录中创建文件）<br>npm install –save hexo-admin 安装<br>hexo server -d   使用<br>open <a href="http://localhost:4000/admin/" target="_blank" rel="noopener">http://localhost:4000/admin/</a>   </li>
 </ul>
+<h2 id="7-进阶"><a href="#7-进阶" class="headerlink" title="7.进阶"></a>7.进阶</h2><p>还想要进一步个性化或者增加其他小功能的朋友，推荐参考：<br><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a><br><a href="https://io-oi.me/tech/hexo-next-optimization/" target="_blank" rel="noopener">打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a></p>
 <p>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
 ]]></content>
       <categories>
