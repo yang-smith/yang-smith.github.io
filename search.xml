@@ -42,7 +42,7 @@
 <h2 id="6-检验"><a href="#6-检验" class="headerlink" title="6.检验"></a>6.检验</h2><ul>
 <li>服务器配置部分完成后，现在我们可以在网页浏览器上访问 OwnCloud。打开浏览器，输入您的服务器 IP 地址，之后按照步骤认证即可。类似下图。</li>
 </ul>
-<p><img src="/2020/01/08/云服务器搭建私有云盘/%5Cimages%5Cpasted-0.png" alt="upload successful"></p>
+<p><img src="/2020/01/08/云服务器搭建私有云盘/pasted-0.png" alt="upload successful"></p>
 <ul>
 <li>可能的问题：php版本过低请参照<a href="https://towait.com/blog/how-to-upgrade-php-version-54-to-56-on-cento7/" target="_blank" rel="noopener">https://towait.com/blog/how-to-upgrade-php-version-54-to-56-on-cento7/</a></li>
 </ul>
