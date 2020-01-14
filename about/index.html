@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="暂且没什么好说">
+<meta name="description" content="神秘人">
 <meta property="og:type" content="website">
 <meta property="og:title" content="关于">
 <meta property="og:url" content="http://yoursite.com/about/index.html">
 <meta property="og:site_name" content="Blog autumn river&#x2F; 秋水">
-<meta property="og:description" content="暂且没什么好说">
+<meta property="og:description" content="神秘人">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-08T09:02:34.772Z">
+<meta property="og:updated_time" content="2020-01-09T09:25:13.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于">
-<meta name="twitter:description" content="暂且没什么好说">
+<meta name="twitter:description" content="神秘人">
 
 
 
@@ -299,7 +299,7 @@
       <div class="post-body">
         
         
-          <p>暂且没什么好说</p>
+          <p>神秘人</p>
 
         
       </div>
@@ -319,6 +319,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -360,7 +363,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -382,7 +385,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -596,6 +599,40 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unjkp.com/valine/dist/Valine.min.js"></script>  
+  <script src="/js/src/Valine.min.js"></script>  
+
+    
+  
+  <script src="/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'UCFhxbmWQwU65CJ4tkRU51ko-gzGzoHsz',
+        appKey: 'VXcllpXNMdwT2RTuYIRDnOkY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        pageSize:'10' || 10,
+    });
+    //增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+  </script>
 
 
 

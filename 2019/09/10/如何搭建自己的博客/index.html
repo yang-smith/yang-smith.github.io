@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Blog autumn river&#x2F; 秋水">
 <meta property="og:description" content="第一篇博客就从怎么搭建的这个博客开始吧。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-09T09:12:15.403Z">
+<meta property="og:updated_time" content="2020-01-09T09:21:49.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何搭建一个自己的博客（hexo+github）">
 <meta name="twitter:description" content="第一篇博客就从怎么搭建的这个博客开始吧。">
@@ -360,6 +360,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/10/如何搭建自己的博客/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/10/如何搭建自己的博客/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -418,7 +428,7 @@
 <h2 id="7-进阶"><a href="#7-进阶" class="headerlink" title="7.进阶"></a>7.进阶</h2><p>还想要进一步个性化或者增加其他小功能的朋友，推荐参考：</p>
 <p><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a></p>
 <p><a href="https://io-oi.me/tech/hexo-next-optimization/" target="_blank" rel="noopener">打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a></p>
-<p>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
+<p><a href="http://www.xinxiaoyang.com/programming/2016-11-25-hexo-image-bug/" target="_blank" rel="noopener">Hexo 图片插入</a><br>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
 
       
     </div>
@@ -487,6 +497,9 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+  
 
 
 
@@ -536,7 +549,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -558,7 +571,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -788,6 +801,40 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unjkp.com/valine/dist/Valine.min.js"></script>  
+  <script src="/js/src/Valine.min.js"></script>  
+
+    
+  
+  <script src="/js/src/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'UCFhxbmWQwU65CJ4tkRU51ko-gzGzoHsz',
+        appKey: 'VXcllpXNMdwT2RTuYIRDnOkY',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:['nick'] ,  //评论者只需要提供评论的昵称即可
+        pageSize:'10' || 10,
+    });
+    //增加以下六行代码去除 power by valine
+    var infoEle = document.querySelector('#comments .info');
+    if (infoEle && infoEle.childNodes && infoEle.childNodes.length > 0){
+      infoEle.childNodes.forEach(function(item) {
+        item.parentNode.removeChild(item);
+      });
+    }
+  </script>
 
 
 

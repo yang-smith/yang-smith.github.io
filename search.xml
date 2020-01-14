@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>window下提升流畅感的小软件</title>
+    <url>/2020/01/10/indow%E4%B8%8B%E6%8F%90%E5%8D%87%E6%B5%81%E7%95%85%E6%84%9F%E7%9A%84%E5%B0%8F%E8%BD%AF%E4%BB%B6/</url>
+    <content><![CDATA[<p>记录一些好用的window下软件</p>
+<h2 id="1-像浏览器一样打开你的文件夹-Clover"><a href="#1-像浏览器一样打开你的文件夹-Clover" class="headerlink" title="1.像浏览器一样打开你的文件夹-Clover"></a>1.像浏览器一样打开你的文件夹-Clover</h2><p>Clover，在Windows原生资源管理器的基础上加上类似Chrome的标签。Clover 把 Chrome 标签页有的样式、功能、右键菜单、快捷键全部移植，如果你常用Chrome浏览器，你应该能瞬间上手。</p>
+<ul>
+<li>你可以用Ctrl+T新开页面，Ctrl+W关闭页面，Ctrl+Tab切换页面，这和你使用Chrome浏览器是完全一样的！</li>
+<li>Ctrl+D，（或者右键或者直接将文件夹拖入书签栏）可以添加当前路径到书签栏，常用的文件夹再也不用挨着打开文件夹找了！</li>
+<li>鼠标滚轮点选文件夹时新建标签页</li>
+<li>双击文件夹空白处跳到上层目录</li>
+<li>双击标签标题时关闭当前标签页</li>
+<li>在标签栏上使用鼠标滚轮来切换标签页<br>WIN10 建议用<a href="http://t.cn/Ai8YHRnK" target="_blank" rel="noopener">Clover3.5.2版</a>，WIN7 / XP 建议使用<a href="http://t.cn/Ai8YH0Cs" target="_blank" rel="noopener">Clover3.0.406版</a></li>
+</ul>
+<h2 id="2-透明任务栏–TranslucentTB"><a href="#2-透明任务栏–TranslucentTB" class="headerlink" title="2.透明任务栏–TranslucentTB"></a>2.透明任务栏–TranslucentTB</h2><p>注意，这款软件只支持Win10，在Microsoft store中可以免费获取。</p>
+<h2 id="3-超快的文件搜索工具–everything"><a href="#3-超快的文件搜索工具–everything" class="headerlink" title="3.超快的文件搜索工具–everything"></a>3.超快的文件搜索工具–everything</h2><p>它还是一款完全免费的软件，界面简洁高效，软件大小只有不到2M，但功能却非常丰富。官网<a href="https://www.voidtools.com/zh-cn/downloads/" target="_blank" rel="noopener">直接下载</a>。</p>
+<h2 id="4-系统清理与优化–系统优化加速工具"><a href="#4-系统清理与优化–系统优化加速工具" class="headerlink" title="4.系统清理与优化–系统优化加速工具"></a>4.系统清理与优化–系统优化加速工具</h2><p>由联想的高级工程师开发，无需解压，无需安装，下载即用。这个软件的清理功能一般，主要用来优化各种系统设置、系统服务项，所以一般只运行一次就行了。<a href="https://url.cn/5NxOByn" target="_blank" rel="noopener">下载地址</a></p>
+<h2 id="5-革命性的搜索和应用启动软件–Listary"><a href="#5-革命性的搜索和应用启动软件–Listary" class="headerlink" title="5.革命性的搜索和应用启动软件–Listary"></a>5.革命性的搜索和应用启动软件–Listary</h2><p>与Everything类似，但是其功能更加适用于LabVIEW程序开发人员，或者常常与文件保存打开打交道的工作人员。无论何时何地，都可以连按两次 Ctrl 键来启动 Listary ，搜索你的应用和文件。非常方便，<a href="http://www.listary.com/download" target="_blank" rel="noopener">官网</a>即可下载。</p>
+<h2 id="6-一些其他常用操作"><a href="#6-一些其他常用操作" class="headerlink" title="6.一些其他常用操作"></a>6.一些其他常用操作</h2><ul>
+<li>常用快捷键：WIN+E打开 我的电脑</li>
+<li>隐藏系统图标：桌面右键——「个性化」——「主题」——「桌面图标设置」。在隐藏回收站图标之前，先右键回收站图标——创建快捷方式——然后把快捷方式扔到你的快速启动目录中去</li>
+</ul>
+]]></content>
+      <categories>
+        <category>杂项</category>
+      </categories>
+      <tags>
+        <tag>软件工具</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>随想</title>
     <url>/2020/01/08/%E9%9A%8F%E6%83%B3/</url>
     <content><![CDATA[<p>关于经济形势<br>新的市场结构已经形成，旧的价值在衰退，不稳定性在增加并造成影响。</p>
@@ -129,7 +158,7 @@
 <h2 id="7-进阶"><a href="#7-进阶" class="headerlink" title="7.进阶"></a>7.进阶</h2><p>还想要进一步个性化或者增加其他小功能的朋友，推荐参考：</p>
 <p><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo 搭建个人博客系列：进阶设置篇</a></p>
 <p><a href="https://io-oi.me/tech/hexo-next-optimization/" target="_blank" rel="noopener">打造个性超赞博客 Hexo + NexT + GitHub Pages 的超深度优化</a></p>
-<p>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
+<p><a href="http://www.xinxiaoyang.com/programming/2016-11-25-hexo-image-bug/" target="_blank" rel="noopener">Hexo 图片插入</a><br>更多详细情况请参考官方文档（<a href="https://hexo.io/zh-cn/docs/" 官网"" target="_blank" rel="noopener">官网</a>）</p>
 ]]></content>
       <categories>
         <category>博客</category>
