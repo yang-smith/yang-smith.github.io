@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>断章</title>
+    <url>/2222/01/01/%E6%96%AD%E7%AB%A0/</url>
+    <content><![CDATA[<center>走一走，停一停</center>
+]]></content>
+      <tags>
+        <tag>index</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020观察记录</title>
     <url>/2020/06/30/2020%E8%A7%82%E5%AF%9F%E8%AE%B0%E5%BD%95/</url>
     <content><![CDATA[<p>时3月23日，有感今年将是数十年内最为精彩纷呈的一年，我将我所观察的形势状况，并附以思考，记录在此。</p>
@@ -59,55 +68,6 @@
       </categories>
   </entry>
   <entry>
-    <title>数据结构与算法之排序问题</title>
-    <url>/2020/06/13/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>排序问题是基础的算法问题<br>按照是否通过比较来决定次序分为比较类与非比较类两类<br>比较类排序算法，需要复合次比较才能确定次序，所以时间复杂度不会低于O（nlogn）。<br>而非比较类则可以突破比较类的时间界限，以线性时间运行。<br>比较类下面细分又有：交换（冒泡，快排），插入（简单插入，希尔），选择（简单选择，堆），归并（二路归并，多路归并）排序<br>非比较类则包含：计数，桶，基数排序</p>
-<p>下文默认数组包含n个数，升序排列。</p>
-<h2 id="比较类排序"><a href="#比较类排序" class="headerlink" title="比较类排序"></a>比较类排序</h2><h3 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h3><ul>
-<li>冒泡排序<br> 冒泡排序思路在于想气泡从水底浮上来一样，将数值大的数不断向后交换。一趟确定一个大数的次序，两层for循环，时间复杂度为O（n^2）。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void mPao(int[] nums,int n )&#123;</span><br><span class="line">    //冒泡排序 </span><br><span class="line">    int temp;</span><br><span class="line">    boolean flag; //标志符：代表这一趟排序是否没有元素变动</span><br><span class="line">    for(int i = 0;i &lt; n-1;i++)&#123;</span><br><span class="line">        flag = true;</span><br><span class="line">        for(int j = 0;j&lt;n - i -1;j++)&#123;</span><br><span class="line">            if(nums[j]&gt;nums[j+1])&#123;</span><br><span class="line">                temp = nums[j];</span><br><span class="line">                nums[j] = nums[j+1];</span><br><span class="line">                nums[j+1] = temp;</span><br><span class="line">                flag = false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(flag) break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<ul>
-<li>快速排序<br>  快速排序是对冒泡排序的改进。冒泡排序的问题在于太慢，不断的交换消耗很多时间。快速排序进行选择性的交换，先将数组分成两部分，大的数归在一边，小的数归在另一边。然后在两边再分别进行快速排序。这里在代码层面用上了递归的思想。最坏情况时间复杂度O（ n^2）。但是平均时间复杂度有所降低为O（nlogn）。一般情况要比冒泡快。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void QuickSort(int[] nums,int low,int high,int n)&#123;</span><br><span class="line">    if(low &lt; high)&#123;</span><br><span class="line">        int pivotpos = partition(nums,low,high);</span><br><span class="line">        QuickSort(nums,low,pivotpos-1,n);</span><br><span class="line">        QuickSort(nums,pivotpos+1,high,n);            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int partition(int[] nums,int low,int high)&#123;</span><br><span class="line">    int pivot = nums[low];  //中轴</span><br><span class="line">    while(low &lt; high)&#123;</span><br><span class="line">        while(high &gt; low &amp;&amp; nums[high] &gt;= pivot) high--;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        while(low &lt; high &amp;&amp; nums[low] &lt;= pivot) low++;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = pivot;</span><br><span class="line">    return low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><ul>
-<li><p>简单插入排序<br>插入排序想法是将数组分为有序无序，不断从无序部分取数然后按照大小插入到有序部分的合适位置。时间复杂度O(n^2)。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void insertSort(int[] nums,int n)&#123;</span><br><span class="line">    for(int i=0;i&lt;n;i++) &#123;</span><br><span class="line">        int temp = nums[i];</span><br><span class="line">        int j = i-1;</span><br><span class="line">        while(j &gt;= 0 &amp;&amp; nums[j] &gt; temp) &#123;  //将插入位置后面的数依次后移</span><br><span class="line">            nums[j+1] = nums[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[j+1] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>希尔排序<br>希尔排序是插入排序的改进。它的不同之处在于先比较距离较远的数。算法思想在于将距离较远的数划分为一组，对每组进行插入排序。逐渐缩小划组距离直至距离为1。希尔排序快速的原因就在于较远距离分组排序，这样每一次分组排序都是模糊的将偏小的数排到左侧，实现上没有类似简单插入排序中插入后移这样耗费时间的步骤。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void ShellSort(int[] nums,int n)&#123;</span><br><span class="line">    for(int dk = n/2;dk&gt;=1;dk=dk/2)&#123;  // 按步长分组</span><br><span class="line">        for(int i=dk;i&lt;n;++i) &#123;</span><br><span class="line">            if(nums[i]&lt;nums[i-dk])&#123;</span><br><span class="line">                int tmp = nums[i],j;</span><br><span class="line">                for(j = i-dk;j&gt;=0&amp;&amp;tmp&lt;nums[j];j-=dk)&#123;</span><br><span class="line">                    nums[j+dk] = nums[j];</span><br><span class="line">                &#125;</span><br><span class="line">                nums[j+dk]=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的基本思想就是分治策略。</p>
-<ul>
-<li>两路归并<br>  将数组不断的二分，直到都是两个为一组。对底层的每一组排序，再将之向上边排序边组合，一直组合到最上层得到有序数组。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void mergeSort(int[] nums,int bgn,int end)&#123;</span><br><span class="line">    if(bgn &gt;= end) return;</span><br><span class="line">    int mid = (bgn+end)/2 ;</span><br><span class="line">    mergeSort(nums,bgn,mid); //二分</span><br><span class="line">    mergeSort(nums,mid + 1,end);</span><br><span class="line">    merge(nums,bgn,mid,end); //重组</span><br><span class="line">&#125;</span><br><span class="line">void merge(int[] nums,int bgn,int mid,int end)&#123;</span><br><span class="line">    int[] temp = new int[end - bgn +1];</span><br><span class="line">    int l = bgn,m = mid +1;</span><br><span class="line">    int k = 0;</span><br><span class="line">    for(k = 0;k &lt; temp.length;k++)&#123;</span><br><span class="line">        if(l &gt; mid)&#123;</span><br><span class="line">            temp[k] = nums[m];</span><br><span class="line">            m++;                </span><br><span class="line">        &#125;</span><br><span class="line">        else if(m &gt; end)&#123;</span><br><span class="line">            temp[k] = nums[l];</span><br><span class="line">            l++;                </span><br><span class="line">        &#125;</span><br><span class="line">        else if(nums[l]&lt;nums[m])&#123;</span><br><span class="line">            temp[k] = nums[l];</span><br><span class="line">            l++;</span><br><span class="line">        &#125;                 </span><br><span class="line">        else &#123;</span><br><span class="line">            temp[k] = nums[m];</span><br><span class="line">            m++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i =0;i &lt; temp.length;i++)&#123;</span><br><span class="line">        nums[i + bgn] = temp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ul>
-<li><p>简单选择排序<br>  思路很简单，即选择最小的与数组第一位交换，然后选择除开有序的其余部分最小的与数组第二位交换……直到最后数组有序。时间复杂度O(n^2)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void selectSort(int[] arr)&#123;</span><br><span class="line">    int min;</span><br><span class="line">    for(int i = 0;i&lt;arr.length;i++)&#123;</span><br><span class="line">        min = i;</span><br><span class="line">        for(int j = i;j&lt;arr.length;j++)&#123;</span><br><span class="line">            if(arr[j] &lt; arr[min])&#123;</span><br><span class="line">                min = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(min != i) &#123;</span><br><span class="line">            int temp = arr[i];</span><br><span class="line">            arr[i] = arr[min];</span><br><span class="line">            arr[min] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>堆排序<br>  堆排序依托于二叉树中名为堆的数据结构。用数组变化模拟堆变化。思路在于，建立大顶堆，而后将堆顶（即最大值）放到数组末尾，对其余部分再重建大顶堆，再将堆顶放到数组尾部，这样得到次大值，不断重复操作直至数组有序。时间复杂度O(nlogn)</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void heapSort(int[] nums) &#123;</span><br><span class="line">    int size = nums.length;</span><br><span class="line">    for (int i = size/2-1; i &gt;=0; i--) &#123;</span><br><span class="line">        adjust(nums, size, i);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = size - 1; i &gt;= 1; i--) &#123;</span><br><span class="line">        int temp = nums[0];</span><br><span class="line">        nums[0] = nums[i];</span><br><span class="line">        nums[i] = temp;</span><br><span class="line">        adjust(nums, i, 0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void adjust(int []nums, int len, int index) &#123;</span><br><span class="line">    int l = 2 * index + 1;</span><br><span class="line">    int r = 2 * index + 2;</span><br><span class="line">    int maxIndex = index;</span><br><span class="line">    if (l&lt;len&amp;&amp;nums[l]&gt;nums[maxIndex])maxIndex = l;</span><br><span class="line">    if (r&lt;len&amp;&amp;nums[r]&gt;nums[maxIndex])maxIndex = r;</span><br><span class="line">    if (maxIndex != index) &#123;</span><br><span class="line">        int temp = nums[maxIndex];</span><br><span class="line">        nums[maxIndex] = nums[index];</span><br><span class="line">        nums[index] = temp;</span><br><span class="line">        adjust(nums, len, maxIndex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="非比较排序"><a href="#非比较排序" class="headerlink" title="非比较排序"></a>非比较排序</h2><h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>计数排序针对整数数组，想法在于另外开辟一个数组空间，新数组代表一个顺序序列，数组每个位置代表一个数值。遍历等待排序的数组，出现一个数值就将新数组对应位置加一。结束后再遍历新数组，按次序将各个部分代表的数值输出，得到结果。以牺牲空间为代价可以获得线性的时间复杂度。在n不算太大时非常有效。</p>
-<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>桶排序是计数排序的改进。其限制了开辟空间的大小。基本想法在于将数组按大小分组，就像是将数值分别投入不同的桶内（桶是有大小顺序的）。然后桶内部排序，排完后再按照桶的排序状况取出。包含一定的分治思想。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void bucketSort(int[] nums)&#123;</span><br><span class="line">     int[] bk = new int[2*50000+1];</span><br><span class="line">     for(int i = 0;i &lt; nums.length;i++)&#123;</span><br><span class="line">         bk[nums[i]+50000] += 1;</span><br><span class="line">     &#125;</span><br><span class="line">     int index = 0;</span><br><span class="line">     for(int i = 0;i &lt; bk.length;i++)&#123;</span><br><span class="line">         for(int j = bk[i];j &gt; 0;j--)&#123;</span><br><span class="line">             nums[index++] = i - 50000;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>其想法在于，按位排序。先按个位桶排序，再按十位桶排序，再按百位桶排序……直到最高位。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void countSort(int[] arr,int n)&#123;</span><br><span class="line">    int[] bk = new int[19];</span><br><span class="line">    Integer max = Integer.MIN_VALUE;</span><br><span class="line">    for(int i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">        if(max &lt; Math.abs(arr[i])) max = arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    if(max &lt; 0) max = -max;</span><br><span class="line">    max = max.toString().length();       //求最高有几位 </span><br><span class="line">    </span><br><span class="line">    int [][] bd = new int[19][arr.length];</span><br><span class="line">    for(int k = 0; k &lt; 6; k++) &#123;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            int value = (int)(arr[i] / (Math.pow(10,k)) % 10);</span><br><span class="line">            bd[value+9][bk[value+9]++] = arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        int fl = 0;</span><br><span class="line">        for(int l = 0; l &lt; 19; l++)&#123;</span><br><span class="line">            if(bk[l] != 0)&#123;</span><br><span class="line">                for(int s = 0; s &lt; bk[l]; s++)&#123;</span><br><span class="line">                    arr[fl++] = bd[l][s];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        bk = new int[19];</span><br><span class="line">        fl = 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>数据结构与算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数据结构与算法之查找</title>
     <url>/2020/06/12/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%9F%A5%E6%89%BE/</url>
     <content><![CDATA[<p>查找是在大量的信息中寻找一个特定的信息元素。面对查找问题，常用的算法有以下四种：</p>
@@ -162,6 +122,55 @@
 <li>弗洛伊德（Floyd）算法。其以动态规划为基础，以邻接矩阵记录图中两点最短距离，不断更新这个邻接矩阵直至得到完整的最短路径表。</li>
 </ul>
 ]]></content>
+      <tags>
+        <tag>数据结构与算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据结构与算法之排序问题</title>
+    <url>/2020/05/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>排序问题是基础的算法问题<br>按照是否通过比较来决定次序分为比较类与非比较类两类<br>比较类排序算法，需要复合次比较才能确定次序，所以时间复杂度不会低于O（nlogn）。<br>而非比较类则可以突破比较类的时间界限，以线性时间运行。<br>比较类下面细分又有：交换（冒泡，快排），插入（简单插入，希尔），选择（简单选择，堆），归并（二路归并，多路归并）排序<br>非比较类则包含：计数，桶，基数排序</p>
+<p>下文默认数组包含n个数，升序排列。</p>
+<h2 id="比较类排序"><a href="#比较类排序" class="headerlink" title="比较类排序"></a>比较类排序</h2><h3 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h3><ul>
+<li>冒泡排序<br> 冒泡排序思路在于想气泡从水底浮上来一样，将数值大的数不断向后交换。一趟确定一个大数的次序，两层for循环，时间复杂度为O（n^2）。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void mPao(int[] nums,int n )&#123;</span><br><span class="line">    //冒泡排序 </span><br><span class="line">    int temp;</span><br><span class="line">    boolean flag; //标志符：代表这一趟排序是否没有元素变动</span><br><span class="line">    for(int i = 0;i &lt; n-1;i++)&#123;</span><br><span class="line">        flag = true;</span><br><span class="line">        for(int j = 0;j&lt;n - i -1;j++)&#123;</span><br><span class="line">            if(nums[j]&gt;nums[j+1])&#123;</span><br><span class="line">                temp = nums[j];</span><br><span class="line">                nums[j] = nums[j+1];</span><br><span class="line">                nums[j+1] = temp;</span><br><span class="line">                flag = false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(flag) break;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<ul>
+<li>快速排序<br>  快速排序是对冒泡排序的改进。冒泡排序的问题在于太慢，不断的交换消耗很多时间。快速排序进行选择性的交换，先将数组分成两部分，大的数归在一边，小的数归在另一边。然后在两边再分别进行快速排序。这里在代码层面用上了递归的思想。最坏情况时间复杂度O（ n^2）。但是平均时间复杂度有所降低为O（nlogn）。一般情况要比冒泡快。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void QuickSort(int[] nums,int low,int high,int n)&#123;</span><br><span class="line">    if(low &lt; high)&#123;</span><br><span class="line">        int pivotpos = partition(nums,low,high);</span><br><span class="line">        QuickSort(nums,low,pivotpos-1,n);</span><br><span class="line">        QuickSort(nums,pivotpos+1,high,n);            </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">int partition(int[] nums,int low,int high)&#123;</span><br><span class="line">    int pivot = nums[low];  //中轴</span><br><span class="line">    while(low &lt; high)&#123;</span><br><span class="line">        while(high &gt; low &amp;&amp; nums[high] &gt;= pivot) high--;</span><br><span class="line">        nums[low] = nums[high];</span><br><span class="line">        while(low &lt; high &amp;&amp; nums[low] &lt;= pivot) low++;</span><br><span class="line">        nums[high] = nums[low];</span><br><span class="line">    &#125;</span><br><span class="line">    nums[low] = pivot;</span><br><span class="line">    return low;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h3><ul>
+<li><p>简单插入排序<br>插入排序想法是将数组分为有序无序，不断从无序部分取数然后按照大小插入到有序部分的合适位置。时间复杂度O(n^2)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void insertSort(int[] nums,int n)&#123;</span><br><span class="line">    for(int i=0;i&lt;n;i++) &#123;</span><br><span class="line">        int temp = nums[i];</span><br><span class="line">        int j = i-1;</span><br><span class="line">        while(j &gt;= 0 &amp;&amp; nums[j] &gt; temp) &#123;  //将插入位置后面的数依次后移</span><br><span class="line">            nums[j+1] = nums[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        nums[j+1] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>希尔排序<br>希尔排序是插入排序的改进。它的不同之处在于先比较距离较远的数。算法思想在于将距离较远的数划分为一组，对每组进行插入排序。逐渐缩小划组距离直至距离为1。希尔排序快速的原因就在于较远距离分组排序，这样每一次分组排序都是模糊的将偏小的数排到左侧，实现上没有类似简单插入排序中插入后移这样耗费时间的步骤。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void ShellSort(int[] nums,int n)&#123;</span><br><span class="line">    for(int dk = n/2;dk&gt;=1;dk=dk/2)&#123;  // 按步长分组</span><br><span class="line">        for(int i=dk;i&lt;n;++i) &#123;</span><br><span class="line">            if(nums[i]&lt;nums[i-dk])&#123;</span><br><span class="line">                int tmp = nums[i],j;</span><br><span class="line">                for(j = i-dk;j&gt;=0&amp;&amp;tmp&lt;nums[j];j-=dk)&#123;</span><br><span class="line">                    nums[j+dk] = nums[j];</span><br><span class="line">                &#125;</span><br><span class="line">                nums[j+dk]=tmp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>归并排序的基本思想就是分治策略。</p>
+<ul>
+<li>两路归并<br>  将数组不断的二分，直到都是两个为一组。对底层的每一组排序，再将之向上边排序边组合，一直组合到最上层得到有序数组。<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void mergeSort(int[] nums,int bgn,int end)&#123;</span><br><span class="line">    if(bgn &gt;= end) return;</span><br><span class="line">    int mid = (bgn+end)/2 ;</span><br><span class="line">    mergeSort(nums,bgn,mid); //二分</span><br><span class="line">    mergeSort(nums,mid + 1,end);</span><br><span class="line">    merge(nums,bgn,mid,end); //重组</span><br><span class="line">&#125;</span><br><span class="line">void merge(int[] nums,int bgn,int mid,int end)&#123;</span><br><span class="line">    int[] temp = new int[end - bgn +1];</span><br><span class="line">    int l = bgn,m = mid +1;</span><br><span class="line">    int k = 0;</span><br><span class="line">    for(k = 0;k &lt; temp.length;k++)&#123;</span><br><span class="line">        if(l &gt; mid)&#123;</span><br><span class="line">            temp[k] = nums[m];</span><br><span class="line">            m++;                </span><br><span class="line">        &#125;</span><br><span class="line">        else if(m &gt; end)&#123;</span><br><span class="line">            temp[k] = nums[l];</span><br><span class="line">            l++;                </span><br><span class="line">        &#125;</span><br><span class="line">        else if(nums[l]&lt;nums[m])&#123;</span><br><span class="line">            temp[k] = nums[l];</span><br><span class="line">            l++;</span><br><span class="line">        &#125;                 </span><br><span class="line">        else &#123;</span><br><span class="line">            temp[k] = nums[m];</span><br><span class="line">            m++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i =0;i &lt; temp.length;i++)&#123;</span><br><span class="line">        nums[i + bgn] = temp[i];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h3><ul>
+<li><p>简单选择排序<br>  思路很简单，即选择最小的与数组第一位交换，然后选择除开有序的其余部分最小的与数组第二位交换……直到最后数组有序。时间复杂度O(n^2)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void selectSort(int[] arr)&#123;</span><br><span class="line">    int min;</span><br><span class="line">    for(int i = 0;i&lt;arr.length;i++)&#123;</span><br><span class="line">        min = i;</span><br><span class="line">        for(int j = i;j&lt;arr.length;j++)&#123;</span><br><span class="line">            if(arr[j] &lt; arr[min])&#123;</span><br><span class="line">                min = j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(min != i) &#123;</span><br><span class="line">            int temp = arr[i];</span><br><span class="line">            arr[i] = arr[min];</span><br><span class="line">            arr[min] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>堆排序<br>  堆排序依托于二叉树中名为堆的数据结构。用数组变化模拟堆变化。思路在于，建立大顶堆，而后将堆顶（即最大值）放到数组末尾，对其余部分再重建大顶堆，再将堆顶放到数组尾部，这样得到次大值，不断重复操作直至数组有序。时间复杂度O(nlogn)</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void heapSort(int[] nums) &#123;</span><br><span class="line">    int size = nums.length;</span><br><span class="line">    for (int i = size/2-1; i &gt;=0; i--) &#123;</span><br><span class="line">        adjust(nums, size, i);</span><br><span class="line">    &#125;</span><br><span class="line">    for (int i = size - 1; i &gt;= 1; i--) &#123;</span><br><span class="line">        int temp = nums[0];</span><br><span class="line">        nums[0] = nums[i];</span><br><span class="line">        nums[i] = temp;</span><br><span class="line">        adjust(nums, i, 0);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">void adjust(int []nums, int len, int index) &#123;</span><br><span class="line">    int l = 2 * index + 1;</span><br><span class="line">    int r = 2 * index + 2;</span><br><span class="line">    int maxIndex = index;</span><br><span class="line">    if (l&lt;len&amp;&amp;nums[l]&gt;nums[maxIndex])maxIndex = l;</span><br><span class="line">    if (r&lt;len&amp;&amp;nums[r]&gt;nums[maxIndex])maxIndex = r;</span><br><span class="line">    if (maxIndex != index) &#123;</span><br><span class="line">        int temp = nums[maxIndex];</span><br><span class="line">        nums[maxIndex] = nums[index];</span><br><span class="line">        nums[index] = temp;</span><br><span class="line">        adjust(nums, len, maxIndex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="非比较排序"><a href="#非比较排序" class="headerlink" title="非比较排序"></a>非比较排序</h2><h3 id="计数排序"><a href="#计数排序" class="headerlink" title="计数排序"></a>计数排序</h3><p>计数排序针对整数数组，想法在于另外开辟一个数组空间，新数组代表一个顺序序列，数组每个位置代表一个数值。遍历等待排序的数组，出现一个数值就将新数组对应位置加一。结束后再遍历新数组，按次序将各个部分代表的数值输出，得到结果。以牺牲空间为代价可以获得线性的时间复杂度。在n不算太大时非常有效。</p>
+<h3 id="桶排序"><a href="#桶排序" class="headerlink" title="桶排序"></a>桶排序</h3><p>桶排序是计数排序的改进。其限制了开辟空间的大小。基本想法在于将数组按大小分组，就像是将数值分别投入不同的桶内（桶是有大小顺序的）。然后桶内部排序，排完后再按照桶的排序状况取出。包含一定的分治思想。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void bucketSort(int[] nums)&#123;</span><br><span class="line">     int[] bk = new int[2*50000+1];</span><br><span class="line">     for(int i = 0;i &lt; nums.length;i++)&#123;</span><br><span class="line">         bk[nums[i]+50000] += 1;</span><br><span class="line">     &#125;</span><br><span class="line">     int index = 0;</span><br><span class="line">     for(int i = 0;i &lt; bk.length;i++)&#123;</span><br><span class="line">         for(int j = bk[i];j &gt; 0;j--)&#123;</span><br><span class="line">             nums[index++] = i - 50000;</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h3><p>其想法在于，按位排序。先按个位桶排序，再按十位桶排序，再按百位桶排序……直到最高位。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">void countSort(int[] arr,int n)&#123;</span><br><span class="line">    int[] bk = new int[19];</span><br><span class="line">    Integer max = Integer.MIN_VALUE;</span><br><span class="line">    for(int i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">        if(max &lt; Math.abs(arr[i])) max = arr[i];</span><br><span class="line">    &#125;</span><br><span class="line">    if(max &lt; 0) max = -max;</span><br><span class="line">    max = max.toString().length();       //求最高有几位 </span><br><span class="line">    </span><br><span class="line">    int [][] bd = new int[19][arr.length];</span><br><span class="line">    for(int k = 0; k &lt; 6; k++) &#123;</span><br><span class="line">        for (int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            int value = (int)(arr[i] / (Math.pow(10,k)) % 10);</span><br><span class="line">            bd[value+9][bk[value+9]++] = arr[i];</span><br><span class="line">        &#125;</span><br><span class="line">        int fl = 0;</span><br><span class="line">        for(int l = 0; l &lt; 19; l++)&#123;</span><br><span class="line">            if(bk[l] != 0)&#123;</span><br><span class="line">                for(int s = 0; s &lt; bk[l]; s++)&#123;</span><br><span class="line">                    arr[fl++] = bd[l][s];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        bk = new int[19];</span><br><span class="line">        fl = 0;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>数据结构与算法</tag>
       </tags>
@@ -569,15 +578,6 @@ setDaemon 守护线程<br></li>
       </categories>
       <tags>
         <tag>软件工具</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>断章</title>
-    <url>/2020/01/08/%E6%96%AD%E7%AB%A0/</url>
-    <content><![CDATA[<center>走一走，停一停</center>
-]]></content>
-      <tags>
-        <tag>index</tag>
       </tags>
   </entry>
   <entry>
